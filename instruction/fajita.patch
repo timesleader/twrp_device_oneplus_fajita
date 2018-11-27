@@ -15,7 +15,7 @@ Edit .repo/manifests/remove.xml and add <remove-project name="platform/bootable/
 Edit .repo/manifests/omni-default.xml and, below all the lines starting with <include , add the lines：
 <project path="bootable/recovery" name="android_bootable_recovery" remote="omnirom" revision="android-9.0" /> 
 use 9.0 busybox
-<project path="external/busybox" name="android_external_busybox" remote="omnirom" revision="android-9.0" />.
+<project path="external/busybox" name="android_external_busybox" remote="TeamWin" revision="android-9.0" />.
 
 Run repo sync.
 
