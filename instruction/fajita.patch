@@ -119,6 +119,23 @@ change PLATFORM_VERSION to 16.1.0 in build/core/version_defaults.mk
 6. fix system wipe error
 https://gerrit.omnirom.org/#/c/android_bootable_recovery/+/32714/
 
+7.solve restore system error
+edit recovery/data。cpp
+
+find 
+---------------------
+#ifdef TW_HAS_NO_BOOT_PARTITION
+	mPersist.SetValue("tw_backup_list", "/system;/data;");
+#else
+	mPersist.SetValue("tw_backup_list", "/system;/data;/boot;");
+#endif
+---------------------------------
+change to：
+#ifdef TW_HAS_NO_BOOT_PARTITION
+	mPersist.SetValue("tw_backup_list", "/system_image;/vendor_image;/data;");
+#else
+	mPersist.SetValue("tw_backup_list", "/system_image;/vendor_image;/data;/boot;");
+#endif
 
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
