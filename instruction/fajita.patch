@@ -116,7 +116,10 @@ echo "ro.build.version.security_patch_orig=$PLATFORM_SECURITY_PATCH"
 
 change PLATFORM_VERSION to 16.1.0 in build/core/version_defaults.mk 
 
-6.
+6. fix system wipe error
+https://gerrit.omnirom.org/#/c/android_bootable_recovery/+/32714/
+
+
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
 lunch omni_fajita-eng 
